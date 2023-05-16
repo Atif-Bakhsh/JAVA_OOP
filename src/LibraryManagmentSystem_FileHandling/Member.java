@@ -36,20 +36,30 @@ public class Member {
 //        }
 //
 //    }
-    public static void addMemberToFile(File f, int memberID, String name) {
+//    public static void addMemberToFile(File f, int memberID, String name) {
+//        FileWriter fw = null;
+//        BufferedWriter bw = null;
+//        try {
+//            fw = new FileWriter(f, true);
+//            bw = new BufferedWriter(fw);
+//            String memberInfo = memberID + " , " + name + "\n";
+//            bw.write(memberInfo);
+//            bw.close();
+//            fw.close();
+//        } catch (IOException e) {
+////            throw new RuntimeException(e);
+//            System.out.println("An exception has occured while tryign to add a new member!!");
+//        }
+//    }
+    public static void addMemberToFile(File f, int memberID, String name) throws IOException {
         FileWriter fw = null;
         BufferedWriter bw = null;
-        try {
-            fw = new FileWriter(f, true);
-            bw = new BufferedWriter(fw);
-            String memberInfo = memberID + " , " + name + "\n";
-            bw.write(memberInfo);
-            bw.close();
-            fw.close();
-        } catch (IOException e) {
-//            throw new RuntimeException(e);
-            System.out.println("An exception has occured while tryign to add a new member!!");
-        }
+        fw = new FileWriter(f, true);
+        bw = new BufferedWriter(fw);
+        String memberInfo = memberID + " , " + name + "\n";
+        bw.write(memberInfo);
+        bw.close();
+        fw.close();
     }
 
     public static void writeToFile(File file, String text) {

@@ -1,10 +1,12 @@
 package LibraryManagmentSystem_FileHandling;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Library {
     static File MembersList = new File("Members.txt");
+//    MembersList.create
     static File BooksList = new File("Books.txt");
     ArrayList<Book> bookList = new ArrayList<>();
     //    ArrayList<String> list=new ArrayList<>();
@@ -15,9 +17,11 @@ public class Library {
         this.membersList = membersList;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 //        LibraryManagmentSystem_FileHandling.Member.addMemberToFile(MembersList,007,"Moayed");
-        Member.writeToFile(MembersList, "this is fifth line of text");
+//        Member.writeToFile(MembersList, "this is fifth line of text");
+        MembersList.createNewFile();
+        Member.addMemberToFile(MembersList, 714, "Moayeeeed");
         System.out.println("added");
     }
 
