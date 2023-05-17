@@ -1,5 +1,11 @@
 package LibraryManagmentSystem_FileHandling;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+
 public class Book {
     private int bookID;
     private String title;
@@ -12,7 +18,16 @@ public class Book {
         this.author = author;
         this.isAvailable = isAvailable;
     }
-
+    public static void addBookToFile(File f, int bookID, String title, String author, boolean isAvailable) throws IOException {
+        FileWriter fw = null;
+        BufferedWriter bw = null;
+        fw = new FileWriter(f, true);
+        bw = new BufferedWriter(fw);
+        String bookInfo = bookID + " , " + title+ " , " + author + " , " + isAvailable + "\n";
+        bw.write(bookInfo);
+        bw.close();
+        fw.close();
+    }
     public int getBookID() {
         return bookID;
     }
