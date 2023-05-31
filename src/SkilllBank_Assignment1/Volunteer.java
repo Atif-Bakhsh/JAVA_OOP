@@ -3,7 +3,7 @@ package SkilllBank_Assignment1;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Volunteer extends Personal_Info {
+public class  Volunteer extends Personal_Info {
 
     Skills skill;
     Availability availability;
