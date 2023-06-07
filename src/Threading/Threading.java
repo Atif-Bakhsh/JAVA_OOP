@@ -5,7 +5,16 @@ package Threading;
 
 //Thread
 public class Threading extends Thread{
+    int ThreadNo;
+    public Threading(int ThreadNo) {
+        this.ThreadNo = ThreadNo;
+    }
     public void run() {
-        System.out.println("Threading of extends Threads");
+        for (int i = 0; i < 5; i++) {
+            System.out.println(i+ " - Thread Threading : "+ ThreadNo);
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {}
+        }
     }
 }
