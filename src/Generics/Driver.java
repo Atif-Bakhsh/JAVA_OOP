@@ -22,6 +22,9 @@ public class Driver {
         Printer<Double> printerDouble = new Printer<>(242.2);
         printerDouble.print();
 
+        Printer<String> printerStrign = new Printer<>("Willy");
+        printerStrign.print();
+
         TwoPrinters<Integer, String> twoPrinters = new TwoPrinters<>(42, "No-Way");
         twoPrinters.print();
         TwoPrinters<String, Boolean> twoPrinters2 = new TwoPrinters<>("Is it ", true);
@@ -33,8 +36,8 @@ public class Driver {
         printArrayList(stringList);
 
         //    Multiiply of inside the box.
-        pairBox<Double, Double> pairbox = new pairBox<>(313.2,414.4);
-        pairbox.productBox(31313.42,414.42);
+        pairBox<Double, Double> pairbox = new pairBox<>(null,null);
+        pairbox.productBox(10.00,3.00);
 //        System.out.println(pairbox);
 
     }
@@ -46,10 +49,6 @@ public class Driver {
             System.out.println(element);
         }
     }
-
-
-
-
 }
 
 //class Genericowo<T>
